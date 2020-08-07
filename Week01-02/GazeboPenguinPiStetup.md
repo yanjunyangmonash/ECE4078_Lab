@@ -98,6 +98,13 @@ source ~/catkin_ws/devel/setup.bash
 roslaunch penguinpi_gazebo penguinpi.launch
 ```
 
+### Speed up the Gazebo visualization
+To speed up your Gazebo visualization inside the VM, replace ```~/catkin_ws/src/penguinpi_gazebo/penguinpi.world``` with [penguinpi.world](penguinpi.world) and switch off the Firefox performance accelaration. This should boost Gazebo's FPS from about 2.5 to 20. 
+
+You may further boost the performance by increaseing the Base Memory (Virtualbox -> Settings -> System -> Motherboard).
+
+![Firefox performance restriction](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/FireFox_reduced.png?raw=true "Firefox performance restriction")
+
 ## Cloud-Based Simulator Environments
 
 ### ROS Development Studio
@@ -181,16 +188,6 @@ serverport = 40000
 # app.run('0.0.0.0', serverport, debug=True)
 http_server = WSGIServer(('', serverport), app)
 http_server.serve_forever()
-```
-
-To reduce CPU usage, you can reduce the default real-time-update rate in Gazebo from 1kHz to 100Hz by adding the following codes in ```catkin_ws/src/penguinpi_gazebo/worlds/penguinpi.world``` (above the line ```</world>```):
-
-```
-    <physics name='default_physics' default='0' type='ode'>
-      <max_step_size>0.005</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>100</real_time_update_rate>
-    </physics>
 ```
 
 For Python3, ROS, Open-CV compatability issues: https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674
