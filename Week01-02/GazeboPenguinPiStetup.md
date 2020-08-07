@@ -116,7 +116,7 @@ Get a free account for ROS Development studio: https://rds.theconstructsim.com/
 
 Fork the example project by clicking this link: http://www.rosject.io/l/15e9a94d/
 
-In "Tools -> shell", type the commands below to install required packages:
+In "Tools -> shell", type the commands below to install required packages (you'll have to do this everytime you restart RDS):
 
 ```
 sudo apt update
