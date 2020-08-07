@@ -99,7 +99,7 @@ roslaunch penguinpi_gazebo penguinpi.launch
 ```
 
 ### Speed up the Gazebo visualization
-To speed up your Gazebo visualization inside the VM, replace ```~/catkin_ws/src/penguinpi_gazebo/penguinpi.world``` with [penguinpi.world](penguinpi.world) and switch off the Firefox performance accelaration. This should boost Gazebo's FPS from about 2.5 to 20. 
+To speed up your Gazebo visualization inside the VM, replace ```~/catkin_ws/src/penguinpi_gazebo/penguinpi.world``` with [penguinpi.world](penguinpi.world) and switch off the Firefox performance acceleration. This should boost Gazebo's FPS from about 2.5 to 20. 
 
 You may further boost the performance by increaseing the Base Memory (Virtualbox -> Settings -> System -> Motherboard).
 
