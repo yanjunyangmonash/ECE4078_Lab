@@ -53,7 +53,7 @@ Install ROS packages for Gazebo 11: http://gazebosim.org/tutorials/?tut=ros_wrap
 ```
 sudo apt install ros-melodic-gazebo11-ros-pkgs 
 sudo apt install ros-melodic-gazebo11-ros-control
-sudo apt install rospkg python-catkin-tools python3-dev python3-catkin-pkg-modules python3-rospkg-modules python3-numpy python3-empy
+sudo apt install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-rospkg-modules python3-numpy python3-empy
 ```
 
 Use catkin workspaces (melodic) to compile the environment: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
