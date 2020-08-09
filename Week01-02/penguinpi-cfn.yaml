@@ -10,8 +10,8 @@ Resources:
   PenguinPiInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0d8d219c7251b91df
-      InstanceType: c5.xlarge
+      ImageId: ami-08ac5fa2701516df2
+      InstanceType: c5.large
       SecurityGroupIds:
         - !Ref PenguinPiInstanceSecurityGroup
       Tags:
@@ -44,3 +44,4 @@ Outputs:
   InstancePublicIp:
     Description: Connection IP for NoMachine
     Value: !Ref ElasticIp
+
