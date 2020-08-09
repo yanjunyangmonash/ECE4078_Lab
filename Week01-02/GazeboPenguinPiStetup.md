@@ -1,6 +1,16 @@
 # How to set up your simulator environment or robot
 This document provides a step-by-step guide on setting up your simulator environment and connecting to the physcial PenguinPi robot.
 
+- [Install Simulator Locally (recommended)](#Install-Simulator-Locally-(recommended))
+    - [Install by importing my Ubuntu 18 VM image](#Install-by-importing-my-Ubuntu-18-VM-image)
+    - [Install from scratch in an empty Ubuntu VM](#Install-from-scratch-in-an-empty-Ubuntu-VM)
+    - [Speed up the Gazebo visualization](#Speed-up-the-Gazebo-visualization)
+- [Cloud-Based Simulator Environments](#Cloud-Based-Simulator-Environments)
+    - [ROS Development Studio](#ROS-Development-Studio)
+    - [AWS Remote Desktop](#AWS-Remote-Desktop)
+- [Running on the Physical Robot](#Running-on-the-Physical-Robot)
+- [Troubleshooting and known issues](#Troubleshooting-and-known-issues)
+
 ## Install Simulator Locally (recommended)
 ![Gazebo 11 inside Ubuntu 18 VM](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/GazeboVM.png?raw=true "Gazebo 11 inside Ubuntu 18 VM")
 
@@ -146,7 +156,28 @@ If you see PenguinPi in the simulator moves and the camera view pops up inside t
 Open "Tools -> IDE", navigate to the ECE4078 folder and start coding away. 
 
 ### AWS Remote Desktop
-TBA
+![NoMachine remote desktop](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/NoMachine.png?raw=true "NoMachine remote desktop")
+
+Download and install the remote desktop client [NoMachine](https://www.nomachine.com/) 
+
+Inside AWS Educate classroom:
+1. Launch [penguinpi-cfn.yaml](penguinpi-cfn.yaml) in CloudFormation: follow [the same instruction](https://lms.monash.edu/course/view.php?id=82455&section=4) ("Jupyter notebook in the cloud", page 5 to 7) as when you launch the Jupyter Notebook instances on AWS
+2. Choose your default VPC from the dropdown list (all Educate accounts should only have 1 VPC)
+3. When CloudFormation is finished, go to the "Outputs" tab and copy the IP address
+
+![AWS CloudFormation](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/AWS.png?raw=true "AWS CloudFormation")
+
+Inside NoMachine, connect to the remote desktop as follows:
+- Host IP: the IP generated in AWS
+- Protocol: NX
+- Port: 4000
+- Username: ubuntu
+- Password: robotsarefun!
+ 
+Once connected to the remote desktop, you can launch Gazebo/RViz by typing ```penguinpi``` in the terminal
+
+**Remember to stop the EC2 instance once you are done.**
+![Terminate the EC2 instance](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/EC2_terminate.png?raw=true "Terminate the EC2 instance")
 
 ## Running on the Physical Robot
 ![PenguinPi Robot](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/PenguinPi.png?raw=true "PenguinPi Robot")
