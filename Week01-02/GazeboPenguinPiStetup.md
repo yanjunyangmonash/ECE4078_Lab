@@ -177,7 +177,9 @@ Inside NoMachine, connect to the remote desktop as follows:
 Once connected to the remote desktop, you can launch Gazebo/RViz by typing ```penguinpi``` in the terminal
 
 **Remember to stop the EC2 instance once you are done.**
-![Terminate the EC2 instance](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/EC2_terminate.png?raw=true "Terminate the EC2 instance")
+The server will stop itself automatically after 4 hours of inactivity (i.e., a user is not interacting with the session, no mouse or keyboard movements).  You can log off at 3 hours and log back in, which will reset the timer. After an instance is stopped, you can log back into AWS, go to EC2, and click start to bring it back up. 
+
+You should "stop" NOT "terminate" an instance. Stop is like hitting the power button and turning it off. You stop paying for the compute, but the underlying disk and server is still there for you to restart. If you hit "terminate", then it's like throwing away the server - you no longer have access to it or its data any more, so you would lose anything on the server that wasn't saved elsewhere, and would have to relaunch the CloudFormation template to rebuild another server.
 
 ## Running on the Physical Robot
 ![PenguinPi Robot](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/PenguinPi.png?raw=true "PenguinPi Robot")
