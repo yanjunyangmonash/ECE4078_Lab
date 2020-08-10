@@ -201,8 +201,9 @@ You can upload files to the robot using the ```scp``` command:
 scp -r ./LOCALDIR pi@192.168.50.1:~/REMOTEDIR
 ```
 
-Run the testing script inside the ssh session to see the robot moving and view its camera input using the command: ```python3 test_camera_motors.py```
-(Note: the robot inside the simulator uses port number "40000", while the physical robot uses port number "8080". This port number is set in ```simulation_ws/src/scripts/server```, as well as the Notebook and python3 scripts.)
+Alternatively, if your robot and your PC are on the same network, you can access it without ssh. You just need to find out the IP address of your robot, which should share the same first 8 digits of your PC's IPv4 address and only differs in the last 2 digits. Now if you replace "localhost:40000" with "RobotIP:8080" in your codes and run the Python scripts from your PC, the Python scripts should be executed directly on your robot.
+
+Run the testing script to see the robot moving and view its camera input using the command: ```python3 test_camera_motors.py```
 
 When you are done with the robot, inside the ssh session run ```sudo halt``` to shut down the robot safely. Once its lights stop flashing you can toggle the power switch. Don't toggle the switch directly to "hard" shut it down.
 
