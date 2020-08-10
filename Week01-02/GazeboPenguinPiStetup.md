@@ -216,7 +216,7 @@ You can connect an external screen, keyboard, and mouse to the robot, then switc
 
 - Dual-booting machines: recommend to follow the instructions on [Install from scratch in an empty Ubuntu VM](Install from scratch in an empty Ubuntu VM) or to download a VM over your existing linux machine.
 
-- Razer graphic cards might have issues with the VM/gazebo/RViz (crashes without apparent error messages.
+- Razer graphic cards might have issues with the VM/gazebo/RViz (crashes without apparent error messages).
 
 - If you got a connection error trying to view PenguinPi web interface in your local VM, after you have cloned https://bitbucket.org/cirrusrobotics/penguinpi_gazebo/src/master/ to your local VM, inside ```catkin_ws/src/penguinpi_gazebo/scripts/server``` (this is the web server that establishes the connection between your python scripts and the simulated / physical robot), replace lines 399 to end with the following codes:
 
