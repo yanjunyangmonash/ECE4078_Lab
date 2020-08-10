@@ -214,6 +214,8 @@ You can connect an external screen, keyboard, and mouse to the robot, then switc
 
 - Virtual box not importing the image properly (not able to import and open the image at all): if the error is related to E_INVALIDARG, check if your virtualbox has been installed in C:\ (instead of D:\ or any other drive).
 
+- Don't tick the 3D acceleration option in Virtualbox as it might cause the VM to black-screen or crash with an out-of-memory error.
+
 - Dual-booting machines: recommend to follow the instructions on [Install from scratch in an empty Ubuntu VM](Install from scratch in an empty Ubuntu VM) or to download a VM over your existing linux machine.
 
 - Razer graphic cards might have issues with the VM/gazebo/RViz (crashes without apparent error messages).
