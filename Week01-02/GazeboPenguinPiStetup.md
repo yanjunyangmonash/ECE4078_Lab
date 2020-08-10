@@ -210,20 +210,24 @@ When you are done with the robot, inside the ssh session run ```sudo halt``` to 
 You can connect an external screen, keyboard, and mouse to the robot, then switch it on and use it as a Rasberry Pi. Inside the Rasberry Pi interface, you can install python packages onboard the robot by running pip in the terminal, e.g., ```python3 -m pip install pynput```. You can also install packages inside the ssh session if your PenguinPi has internet connection (you can set the internet connection up in the Rasberry Pi interface).
 
 ## Troubleshooting and known issues
-The same python scripts should run both in simulator and on the physical robot. The only difference is that the robot inside the simulator uses port number "40000", while the physical robot uses port number "8080".
+- The same python scripts should run both in simulator and on the physical robot. The only difference is that the robot inside the simulator uses port number "40000", while the physical robot uses port number "8080".
 
-If you got a connection error trying to view PenguinPi web interface in your local VM, after you have cloned https://bitbucket.org/cirrusrobotics/penguinpi_gazebo/src/master/ to your local VM, inside ```catkin_ws/src/penguinpi_gazebo/scripts```, replace lines 399 to end with the following codes:
+- Virtual box not importing the image properly (not able to import and open the image at all): if the error is related to E_INVALIDARG, check if your virtualbox has been installed in C:\ (instead of D:\ or any other drive).
 
-```
-serverport = 40000
-# app.jinja_env.lstrip_blocks = True
-# app.jinja_env.trim_blocks = True
-# app.jinja_env.line_statement_prefix = '#'
-# app.run('0.0.0.0', serverport, debug=True)
-http_server = WSGIServer(('', serverport), app)
-http_server.serve_forever()
-```
+- Dual-booting machines: recommend to follow the instructions on [Install from scratch in an empty Ubuntu VM](Install from scratch in an empty Ubuntu VM) or to download a VM over your existing linux machine.
 
-For Python3, ROS, Open-CV compatability issues: https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674
+- If you got a connection error trying to view PenguinPi web interface in your local VM, after you have cloned https://bitbucket.org/cirrusrobotics/penguinpi_gazebo/src/master/ to your local VM, inside ```catkin_ws/src/penguinpi_gazebo/scripts/server``` (this is the web server that establishes the connection between your python scripts and the simulated / physical robot), replace lines 399 to end with the following codes:
 
-The PenguinPi robot can be broken in SO MANY WAYS... So far I have had the wheel connection wire snapping off (need soldering iron to fix), the tail of the frame snapping off during shippment (need to take the whole thing apart and reassamble with a new frame), the camera connection ribbon broken (just get a replacement robot), so please be gentle with it...
+    ```
+    serverport = 40000
+    # app.jinja_env.lstrip_blocks = True
+    # app.jinja_env.trim_blocks = True
+    # app.jinja_env.line_statement_prefix = '#'
+    # app.run('0.0.0.0', serverport, debug=True)
+    http_server = WSGIServer(('', serverport), app)
+    http_server.serve_forever()
+    ```
+
+- For Python3, ROS, Open-CV compatability issues: https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674 (using Python virtual environment or python2/3 mixed seems to create issues for OpenCV and CV-bridge)
+
+- The PenguinPi robot can be broken in SO MANY WAYS... So far I have had the wheel connection wire snapping off (need soldering iron to fix), the tail of the frame snapping off during shippment (need to take the whole thing apart and reassamble with a new frame), the camera connection ribbon broken (just get a replacement robot), so please be gentle with it...
