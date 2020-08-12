@@ -1,4 +1,4 @@
-# Week 5-6 Instructions
+# Week 6-7 Instructions
 
 ## Introduction
 TBA
