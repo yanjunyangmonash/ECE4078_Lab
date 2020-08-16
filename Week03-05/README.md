@@ -80,7 +80,7 @@ You will be marked by [the SLAM map your function generates](#SLAM-week-5) for t
 ![PenguinPi Arena RDS Pale](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/PaleRDSarena.png?raw=true "The arena in ROS Development Studio's Gazebo webservice appears pale")
 
 ### Motion model (week 3)
-Using the drive signals, you can estimate the resulting location of the robot. **Please fill in the code segment in [Robot.py](slam/Robot.py) ([line 27](slam/Robot.py#L27)) to complete this motion model.** As shown in [slam/Measurements.py](slam/Measurements.py), this motion model will be used by the SLAM function.
+Using the drive signals, you can estimate the resulting location of the robot. **Please fill in the code segment in [Robot.py](slam/Robot.py) ([line 27](slam/Robot.py#L27)) to complete this motion model.** As shown in [Measurements.py](slam/Measurements.py), this motion model will be used by the SLAM function.
 
 **You may improve this estimation by calibrating the wheels**: [default wheel calibration settings](calibration/wheel_calibration) have been provided. However, this calibration may not apply to your environment. If you would like to re-calibrate the wheels, run [wheel_calibration.py](calibration/wheel_calibration.py) in a new terminal with python3. This script will drive the robot straight at different speeds, and then spin it at different speeds. You can drag and move the robot inside Gazebo. The ground grids are 1m by 1m. By clicking on World -> PenguinPi -> pose you can view exact coordinates of the robot for calibration.
 
@@ -93,7 +93,7 @@ To visualize ARUCO marker detection, replace the keyboard teleoperation and GUI 
 
 To visualize how noise influences ARUCO marker detection, uncomment [lines 93 to 95](keyboardControlARtestStarter.py#L93) in keyboardControlARtestStarter.py and re-run it. You should now see noises added to PenguinPi's camera feed. Try driving the robot around again and view how the ARUCO marker detection annotations change when there are noises. There will NOT be noise added during marking, this is just for your to visualize the impact of noise, which may occur when you are using a physcial robot. 
 
-As shown in [aruco_detector.py](slam/aruco_detector.py) and [slam/Measurements.py](slam/Measurements.py), the ARUCO marker information will be used by the SLAM function.
+As shown in [aruco_detector.py](slam/aruco_detector.py) and [Measurements.py](slam/Measurements.py), the ARUCO marker information will be used by the SLAM function.
 
 **You may improve this estimation by calibrating the camera**: [default camera calibration settings](calibration/camera_calibration) have been provided. However, this calibration may not apply to your environment. If you would like to re-calibrate the camera, launch [penguinpi_calibration.world](calibration/penguinpi_calibration.world) with [penguinpi_calibration.launch](calibration/penguinpi_calibration.launch) by typing ```roslaunch penguinpi_gazebo penguinpi_calibration.launch``` in the terminal (make sure you have these two files saved in the world and launch folders). Inside Gazebo you can also drag and move the robot around so that its camera faces the ARUCO checkerboard. Run [camera_calibration.py](calibration/camera_calibration.py) in a new terminal with python3 and take 20 pictures of the ARUCO checkerboard from different angles / distances to calibrate the camera.
 
