@@ -11,6 +11,7 @@ def calibrateWheelRadius():
     # For each wheel velocity, the robot scale parameter can be computed
     # by comparing the time and distance driven to the input wheel velocities.
 
+    # Feel free to change the range / step
     wheel_velocities_range = range(20, 80, 15)
     delta_times = []
 
@@ -48,10 +49,11 @@ def calibrateWheelRadius():
 
 def calibrateBaseline(scale):
     # Compute the robot basline parameter using a range of wheel velocities.
-    # For each wheel velocity, the robot scale parameter can be computed by
+    # For each wheel velocity, the robot baseline parameter can be computed by
     # comparing the time elapsed and rotation completed to the input wheel
-    # velocities.
+    # velocities to find out the distance between the wheels.
 
+    # Feel free to change the range / step
     wheel_velocities_range = range(30, 60, 10)
     delta_times = []
 
@@ -80,9 +82,11 @@ def calibrateBaseline(scale):
     # Once finished driving, compute the basline parameter by averaging
     num = len(wheel_velocities_range)
     baseline = 0
-    for delta_time, wheel_vel in zip(delta_times, wheel_velocities_range):
-        baseline += 1 / num * (2 * scale * wheel_vel * delta_time) / (2 * np.pi)
-    print("The baseline parameter is estimated as {:.2f} m/ticks.".format(baseline))
+    # TODO: compute baseline parameter
+    # ------------------------------------------
+    # ----------- Add your code here -----------
+    # ------------------------------------------
+    print("The baseline parameter is estimated as {:.2f} m.".format(baseline))
 
     return baseline
 
